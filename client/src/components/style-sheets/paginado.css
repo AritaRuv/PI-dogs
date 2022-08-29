@@ -1,0 +1,43 @@
+.container_paginado{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cubo{
+  display: flex;
+  width: 1000px;
+  height: 24px;
+  background-color: #facfd8 ;
+
+}
+.paginado{
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+    
+    
+}
+
+.number {
+    font-size:15px;
+    width:24px;
+    height:24px;
+    color:rgb(0, 0, 0);
+    background:#facfd8;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .number:hover {
+    background:  white;
+    color: rgba(202, 2, 48, 1);
+    
+  }
+                
+   
+   

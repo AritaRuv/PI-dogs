@@ -1,0 +1,52 @@
+.container{
+    height: 100vh;
+    width: 100%;
+    background-image: url('../../images/landingPage.jpg');
+    background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    .button-div{
+        display: flex;
+        margin-right: 170px;
+        margin-top: 300px;
+    }
+    .button {
+        padding: 0.8em 1.8em;
+        border: 2px solid #ca0230;
+        position: relative;
+        overflow: hidden;
+        background-color: transparent;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 16px;
+        transition: .3s;
+        z-index: 1;
+        font-family: inherit;
+        color: #ca0230;
+       }
+       
+       .button::before {
+        content: '';
+        width: 0;
+        height: 300%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        background: #ca0230;
+        transition: .5s ease;
+        display: block;
+        z-index: -1;
+       }
+       
+       .button:hover::before {
+        width: 105%;
+       }
+       
+       .button:hover {
+        color:white;
+       }

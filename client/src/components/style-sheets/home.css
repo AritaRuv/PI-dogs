@@ -1,0 +1,63 @@
+.content_app{
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+}
+.image_home{
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    user-select: none;
+    background-color: white;
+}
+.img{
+    display: flex;
+    height: 200px;
+    width: auto;
+    user-select: none;
+
+}
+.container_filters{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 40px;
+    padding-right: 40px;
+    user-select: none;
+}
+
+.select{
+    padding: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border: none;
+    user-select: none;
+}
+.refresh{
+    padding: 5px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgba(202, 2, 48, 1);
+    border: 1px solid rgba(202, 2, 48, 1);
+    background-color: white;
+    border-radius: 2px;
+    user-select: none;
+}
+.refresh:hover{
+    background-color: rgba(202, 2, 48, 1);
+    color: white;
+}
+
+.all_cards{
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    user-select: none;
+}
+.background{
+    background-image: url('../../images/background.jpg');
+    min-height: 1000px;
+    background-position: 0px 60px;
+    background-repeat: repeat;
+
+}
