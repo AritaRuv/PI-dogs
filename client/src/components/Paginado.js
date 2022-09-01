@@ -18,7 +18,7 @@ export default function Paginado({dogsPerPage, allDogs, paginado, currentPage}){
                 {pagesNumber &&
                 pagesNumber.map(number =>(
                     <div  onClick={() => paginado(number)} className={currentPage === number ?'number_active' : 'number'} key={number}>
-                    <a>{number}</a>
+                    <p>{number}</p>
                     </div>
                 ))}
                 <button className='arrow' onClick={() =>paginado(currentPage === pagesNumber.length ? currentPage : currentPage + 1)} >⇛</button>

@@ -25,7 +25,7 @@ export default function NavbarId(){
 
             <ul className='list'>
                 <li onClick={(e) => cleanD(e)}><Link to='/home'><div className='button_navbar'>Home</div></Link></li>
-                <li><Link to='/dog'><div className='button_navbar'>Create</div></Link></li>
+                <li onClick={(e) => cleanD(e)}><Link to='/dog'><div className='button_navbar'>Create</div></Link></li>
             </ul>
             <div className='search_bar'>
             <SearchBarId/>

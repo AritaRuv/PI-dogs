@@ -9,6 +9,10 @@
         flex-direction: row ;
         align-items: center;
         border: 2px solid black;
+        transition: transform .2s;
+      }
+      .card:hover{
+        transform: scale(1.05);
       }
       
       .card_img {

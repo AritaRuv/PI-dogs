@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { getNameDogs } from "../actions";
 import './style-sheets/searchBar.css'
 
-export default function SearchBar(){
+export default function SearchBar({setCurrentPage}){
     const dispatch = useDispatch()
     const [name, setName] = useState('')
 
@@ -14,10 +14,11 @@ export default function SearchBar(){
         setName(e.target.value)    
     }
 
-    function handleSubmit(e){
+    async function handleSubmit(e){
         e.preventDefault()
-        dispatch(getNameDogs(name))
+        await dispatch(getNameDogs(name))
         setName('')
+        setCurrentPage(1)
         //name es mi estado local
     }
 

@@ -74,7 +74,8 @@ export default function Home(){
 
     return (
         <div className='background'>
-            <Navbar/>
+            <Navbar
+            setCurrentPage={setCurrentPage} />
             <Paginado
             dogsPerPage={dogsPerPage}
             allDogs={allDogs.length}

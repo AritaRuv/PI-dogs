@@ -4,7 +4,7 @@ import SearchBar from "./SearchBar";
 import image from '../images/navbar.png'
 import './style-sheets/navBar.css'
 
-export default function Navbar(){
+export default function Navbar({setCurrentPage}){
     
     return(
         <nav className='container_navbar'>
@@ -17,7 +17,7 @@ export default function Navbar(){
                 <li><Link to='/dog'><div className='button_navbar'>Create</div></Link></li>
             </ul>
             <div className='search_bar'>
-            <SearchBar/>
+            <SearchBar setCurrentPage={setCurrentPage}/>
             </div>
 
             
