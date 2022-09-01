@@ -20,7 +20,7 @@ const getDogsApi = async () => {
         }
     })
     return apiDogs
-}
+    }
 
 const getDogsDb = async () => {
 
@@ -35,12 +35,11 @@ const getDogsDb = async () => {
         })
     }
 
-
 const getAllDogs = async () => {
     const apiDogs = await getDogsApi()
     const dbDogs= await getDogsDb()
     const allDogs = apiDogs.concat(dbDogs)
     return allDogs
-}
+    }
 
 module.exports = getAllDogs

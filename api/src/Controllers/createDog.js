@@ -1,5 +1,6 @@
 const { Dog, Temperament } = require('../db.js');
 
+
 let createDog = async (id, name, height_min, height_max, weight_min, weight_max, life_span, temperaments, image) => {
     const newDog = await Dog.create({
         id,
@@ -8,7 +9,7 @@ let createDog = async (id, name, height_min, height_max, weight_min, weight_max,
         height_max, 
         weight_min, 
         weight_max,
-        life_span: life_span + ' years', 
+        life_span: life_span , 
         image
     })
     temperaments.map(async el =>{

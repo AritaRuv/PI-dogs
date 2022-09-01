@@ -62,5 +62,26 @@
     border-bottom: 2px solid #ca0230;
 }
 
+.loading{
+    margin-top: 100px;
+}
+.button_delete{
+    margin-top: 20px;
+    width: 100px;
+    background: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    border-top: none;
+    border-left: none;
+    color: #ca0230;
+    border-bottom: 2px solid #ca0230;
+    border-right: 2px solid #ca0230;    
+}
+.button_delete:hover{
+     background-color: #ca0230;
+     color: white;
+     border: none;   
+}
+
 
 

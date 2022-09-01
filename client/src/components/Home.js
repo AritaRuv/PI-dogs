@@ -8,6 +8,7 @@ import Paginado from './Paginado';
 import Navbar from './Navbar';
 import Loading from './Loading'
 import image from '../images/homeImage.jpg'
+import notFound from '../images/404.jpg'
 import './style-sheets/home.css'
 
 export default function Home(){
@@ -66,11 +67,10 @@ export default function Home(){
    
     useEffect(()=>{
        dispatch(getDogs())
+       dispatch(getTemperaments())
      },[dispatch])
 
-     useEffect(()=>{
-        dispatch(getTemperaments())
-      },[dispatch])
+
 
     return (
         <div className='background'>
@@ -78,7 +78,8 @@ export default function Home(){
             <Paginado
             dogsPerPage={dogsPerPage}
             allDogs={allDogs.length}
-            paginado={paginado}/>
+            paginado={paginado}
+            currentPage={currentPage}/>
             <div className='image_home'>
                 <img src={image} alt='home' className='img'/>
             </div>
@@ -125,8 +126,10 @@ export default function Home(){
             </div> 
           
             <div className='all_cards'>
-            {   currentDog.length > 0 ?
-                currentDog?.map(e =>{
+
+            {   currentDog.length > 0 
+                ? currentDog !== '1' 
+                ? currentDog.map(e =>{
                     return(
                         <div key={e.id}>
                         <Link className='link' to={'/dogs/'+e.id}>
@@ -144,7 +147,8 @@ export default function Home(){
                         </div>
                       
                         )
-                }):<Loading/>
+                }):<div><img src={notFound} alt='not-found'/></div>
+                :<Loading/>
             }
             </div>
  

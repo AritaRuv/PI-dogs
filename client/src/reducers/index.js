@@ -1,11 +1,10 @@
-import { GET_DOGS, GET_DOGS_NAME, GET_TEMPERAMENTS, FILTER_BY_ORIGIN, FILTER_BY_SIZE, ORDER_BY_NAME, ORDER_BY_WEIGHT, FILTER_TEMPS, GET_DOGS_ID } from '../actions/index.js'
+import { GET_DOGS, GET_DOGS_NAME, GET_TEMPERAMENTS, FILTER_BY_ORIGIN, FILTER_BY_SIZE, ORDER_BY_NAME, ORDER_BY_WEIGHT, FILTER_TEMPS, GET_DOGS_ID, DELETE_DOG_ID, CLEAN_DETAILS } from '../actions/index.js'
 
 const initialState = {
     dogs : [],
     allDogs : [],
     details : [],
     temperaments : []
-
 }
 
 function rootReducer (state = initialState, action){
@@ -18,17 +17,28 @@ function rootReducer (state = initialState, action){
                 allDogs: action.payload
             }
         case GET_DOGS_NAME:
+            const name = action.payload
+            if(Array.isArray(name)){
                 return{
                     ...state,
-                    dogs: action.payload
-                }
-
+                    dogs: name
+            }}else{
+                return{
+                    ...state,
+                    dogs: '1'
+            }  
+            }
         case GET_TEMPERAMENTS:
             return{
                 ...state,
                 temperaments: action.payload
             }
         case GET_DOGS_ID:
+            return{
+                ...state,
+                details: action.payload
+            }
+        case CLEAN_DETAILS:
             return{
                 ...state,
                 details: action.payload
@@ -115,11 +125,15 @@ function rootReducer (state = initialState, action){
                 ...state,
                 dogs: action.payload === 'all' ? allDogsTemp : temperamentsFiltered
             }
-
         case 'POST_DOG':
             return{
                 ...state
             }
+        case DELETE_DOG_ID:
+            return {
+                ...state
+            }
+
         default: return state
     }
 

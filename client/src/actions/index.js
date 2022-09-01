@@ -9,6 +9,8 @@ export const ORDER_BY_NAME = 'ORDER_BY_NAME';
 export const ORDER_BY_WEIGHT = 'ORDER_BY_WEIGHT';
 export const FILTER_TEMPS = 'FILTER_TEMPS';
 export const GET_DOGS_ID = 'GET_DOGS_ID';
+export const CLEAN_DETAILS = 'CLEAN_DETAILS'
+export const DELETE_DOG_ID = 'DELETE_DOG_ID'
 
 
 //FUNCION ASINCRONA
@@ -50,6 +52,11 @@ export function getDetail(id){
             }catch (error) {
             console.log(error)
     }}}
+
+export function cleanDetails(){
+    return{
+        type: CLEAN_DETAILS
+    }}
     
 export function getTemperaments(){
         return async function(dispatch){
@@ -101,5 +108,19 @@ export function createDog(payload){
         } catch (error) {
             console.log(error)
     }}}
+
+export function deleteDog(id){
+    return async function (dispatch){
+        try {
+            await axios.delete(`http://localhost:3001/dog/${id}`)
+            return dispatch({
+                type: DELETE_DOG_ID,
+                payload: ''
+            })
+        }catch(error){
+            console.log(error)
+        }
+    }
+    }
 
 

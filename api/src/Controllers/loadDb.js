@@ -7,12 +7,9 @@ let loadDb = async () =>{
        let arrayTemps = []
        axios.get(apiURL)
        .then( response => {
-           //response es un array de objetos, donde tenemos que ingresar a la prop temperaments
-           //response.data.temperaments = 'lindo, feo, grande, chico'
-
-          response.data?.forEach(element => {
-                
-               let temps = element.temperament?.split(', ')
+        //response es un array de objetos, donde tenemos que ingresar a la prop temperaments de cada obj ej: [{name:pepe, temperaments: ['lindo, feo, grande, chico']}]
+        response.data?.forEach(dog => {
+               let temps = dog.temperament?.split(', ')
                arrayTemps.push(temps) 
            });
            arrayTemps = arrayTemps.flat()
@@ -22,7 +19,6 @@ let loadDb = async () =>{
                 Temperament.findOrCreate({ where: { name: t } })
             }
            });
-           
        })
     
    } catch (error) {

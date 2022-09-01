@@ -15,8 +15,6 @@
     flex-direction:row;
     align-items:center;
     justify-content:space-between;
-    
-    
 }
 
 .number {
@@ -37,6 +35,39 @@
     background:  white;
     color: rgba(202, 2, 48, 1);
     
+  }
+
+  .number_active{
+    font-size:15px;
+    width:24px;
+    height:24px;
+    color:rgba(202, 2, 48, 1);
+    background: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .arrow{
+    font-size:15px;
+    width:24px;
+    height:24px;
+    color:rgb(0, 0, 0);
+    background:#facfd8;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    border: none
+  }
+
+  .arrow:hover{
+    color:rgba(202, 2, 48, 1);
   }
                 
    

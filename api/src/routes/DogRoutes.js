@@ -1,6 +1,8 @@
 const express = require("express");
 const DogRouter = express.Router();
 const createDog = require('../Controllers/createDog.js');
+const { Dog } = require('../../src/db.js')
+
 
 DogRouter.post('/', async(req,res)=>{
    
@@ -15,5 +17,20 @@ DogRouter.post('/', async(req,res)=>{
             }}else{
                 res.status(404).send('You must complete all the required information')
             }})
+
+DogRouter.delete('/:id', async(req,res)=>{
+    
+    const { id } = req.params
+    if(!id) res.status(404).send('ID required')
+    try{
+        await Dog.destroy({
+            where: {
+                id: id
+            }})
+        res.status(200).send('Dog deleted correctly')
+    }catch(error){
+        res.status(404).send(error)
+    }
+})
 
 module.exports = DogRouter

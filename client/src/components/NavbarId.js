@@ -1,21 +1,21 @@
 import React from "react";
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { getDogs } from '../actions';
-import {useDispatch } from 'react-redux';//hooks
+import { cleanDetails } from '../actions';
+import {useDispatch, useSelector } from 'react-redux';//hooks
 import image from '../images/navbar.png'
 import SearchBarId from "./SearchBarId";
 import './style-sheets/navBar.css'
 
 export default function NavbarId(){
     
-    const dispatch = useDispatch() 
-    
+    const dispatch = useDispatch()
+    const details = useSelector(state=> state.details) 
 
-    useEffect(()=>{
-        dispatch(getDogs())
-      },[dispatch])
- 
+    const cleanD = (e) => {
+        if(details.length){
+            dispatch(cleanDetails())
+        } 
+    }
     return(
 
         <nav className='container_navbar'>
@@ -24,7 +24,7 @@ export default function NavbarId(){
             </div>
 
             <ul className='list'>
-                <li><Link to='/home'><div className='button_navbar'>Home</div></Link></li>
+                <li onClick={(e) => cleanD(e)}><Link to='/home'><div className='button_navbar'>Home</div></Link></li>
                 <li><Link to='/dog'><div className='button_navbar'>Create</div></Link></li>
             </ul>
             <div className='search_bar'>

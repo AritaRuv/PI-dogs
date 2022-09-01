@@ -6,15 +6,10 @@ import '../components/style-sheets/landingPage.css';
 export default function LandigPage(){
     return(
         <div className='container'>
-          
-            <div className='button-div'>
+          <div className='button-div'>
             <Link to ='/home'>
                 <button className='button'>Ingresar</button>
             </Link>
             </div>
         </div>
-          
-            
-        
-    )
-}
+         )}
