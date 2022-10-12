@@ -14,14 +14,24 @@ export default function Paginado({dogsPerPage, allDogs, paginado, currentPage}){
         <nav className='container_paginado'>
             <div className='cubo'></div>
             <div className='paginado'>
-                <button className='arrow' onClick={() =>paginado(currentPage === 1? currentPage : currentPage -1)}>⇚</button>
+                <button 
+                className='arrow' 
+                onClick={() =>paginado(currentPage === 1? currentPage : currentPage -1)}
+                >⇚</button>
                 {pagesNumber &&
                 pagesNumber.map(number =>(
-                    <div  onClick={() => paginado(number)} className={currentPage === number ?'number_active' : 'number'} key={number}>
+                    <div 
+                    onClick={() => paginado(number)} 
+                    className={currentPage === number ?'number_active' : 'number'} 
+                    key={number}
+                    >
                     <p>{number}</p>
                     </div>
                 ))}
-                <button className='arrow' onClick={() =>paginado(currentPage === pagesNumber.length ? currentPage : currentPage + 1)} >⇛</button>
+                <button 
+                className='arrow' 
+                onClick={() =>paginado(currentPage === pagesNumber.length ? currentPage : currentPage + 1)} 
+                >⇛</button>
             </div>
             <div className='cubo'></div>
         </nav>

@@ -54,10 +54,12 @@ export function CreateDog(){
       })
     }
     const handleSelect = (e) => {
-            setInput({
-                ...input,
-                temperaments:[...input.temperaments, e.target.value]  
-            })
+        if(!input.temperaments.includes(e.target.value)){
+          setInput({
+            ...input,
+            temperaments:[...input.temperaments, e.target.value]  
+        })
+        }
     }
     const handleSubmit = (e) => {
 

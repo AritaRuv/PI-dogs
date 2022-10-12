@@ -1,4 +1,16 @@
-import { GET_DOGS, GET_DOGS_NAME, GET_TEMPERAMENTS, FILTER_BY_ORIGIN, FILTER_BY_SIZE, ORDER_BY_NAME, ORDER_BY_WEIGHT, FILTER_TEMPS, GET_DOGS_ID, DELETE_DOG_ID, CLEAN_DETAILS } from '../actions/index.js'
+import {
+    GET_DOGS, 
+    GET_DOGS_NAME, 
+    GET_TEMPERAMENTS, 
+    FILTER_BY_ORIGIN, 
+    FILTER_BY_SIZE, 
+    ORDER_BY_NAME, 
+    ORDER_BY_WEIGHT, 
+    FILTER_TEMPS, 
+    GET_DOGS_ID, 
+    DELETE_DOG_ID, 
+    CLEAN_DETAILS 
+} from '../actions/index.js'
 
 const initialState = {
     dogs : [],

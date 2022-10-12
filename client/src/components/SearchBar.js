@@ -16,6 +16,7 @@ export default function SearchBar({setCurrentPage}){
 
     async function handleSubmit(e){
         e.preventDefault()
+        if(name === '') return alert('no name')
         await dispatch(getNameDogs(name))
         setName('')
         setCurrentPage(1)
