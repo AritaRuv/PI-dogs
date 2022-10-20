@@ -22,11 +22,12 @@ const loadDb = require('./src/Controllers/loadDb.js');
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
 const { load } = require('dotenv');
+const { PORT }  = require('./config.js')
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(async () => {
   await loadDb()
-  server.listen(3001, () => {
+  server.listen(PORT, () => {
   
     console.log('Database loaded')
     console.log('%s listening at 3001'); // eslint-disable-line no-console

@@ -34,9 +34,7 @@ export default function Home(){
     }
     
     function handleFilterSize(e){
-        
         dispatch(filterDogsBySize(e.target.value))
-       
     }
 
     function handleFilterOrigin(e){
